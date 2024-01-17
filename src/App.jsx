@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Card from './components/Card';
 
 function App() {
 	const [isMenuHidden, setMenuHidden] = useState(true);
@@ -7,13 +8,19 @@ function App() {
 		setMenuHidden((prevHidden) => !prevHidden);
 	};
 
+	const food = {
+		stew: { title: '5 Bean Chilli Stew', alt: 'stew', author: 'Mario', time: '25 mins' },
+		noodles: { title: 'Veg Noodles', alt: 'noodles', author: 'Mario', time: '25 mins' },
+		curry: { title: 'Tofu Curry', alt: 'curry', author: 'Mario', time: '25 mins' }
+	};
+
 	return (
 		<div className="grid md:grid-cols-5">
 			<div className="md:col-span-1 md:flex md:justify-end">
 				<nav className="text-right">
 					<div className="flex items-center justify-between">
 						<h1 className="border-b border-gray-100 p-4 font-bold uppercase">
-							<a href="/" className="hover:text-gray-700">
+							<a href="/" className="tracking-widest hover:text-gray-700">
 								Food Ninja
 							</a>
 						</h1>
@@ -83,7 +90,6 @@ function App() {
 					</ul>
 				</nav>
 			</div>
-			{/* end nav */}
 			<main className="bg-gray-100 px-16 py-6 md:col-span-4">
 				<div className="flex justify-center gap-2 md:justify-end">
 					<a
@@ -99,162 +105,22 @@ function App() {
 						Sign up
 					</a>
 				</div>
-				<header>
-					<h2 className="text-6xl font-semibold text-gray-700">Recipes</h2>
-					<h3 className="text-2xl font-semibold">For Ninjas</h3>
+				<header className="mt-4">
+					<h2 className="text-6xl font-semibold leading-none tracking-wider text-gray-700">Recipes</h2>
+					<h3 className="text-2xl font-semibold tracking-wider">For Ninjas</h3>
 				</header>
 				<div>
 					<h4 className="mt-12 border-b border-gray-200 pb-2 font-bold">Latest Recipes</h4>
 					<div className="mt-8 grid gap-10 lg:grid-cols-3">
-						<div className="card">
-							<div>
-								<img src="images/stew.jpg" alt="Stew" className="h-32 w-full object-cover sm:h-48" />
-							</div>
-							<div>
-								<span className="font-bold">5 Bean Chilli Stew</span>
-								<span className="block text-sm text-gray-500">Recipe by Mario</span>
-							</div>
-							<div className="badge">
-								<svg
-									className="inline-block w-5"
-									fill="none"
-									strokeLinecap="round"
-									strokeLinejoin="round"
-									strokeWidth="2"
-									stroke="currentColor"
-									viewBox="0 0 24 24"
-								>
-									<path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-								</svg>
-								<span>25 mins</span>
-							</div>
-						</div>
-						<div className="card">
-							<div>
-								<img
-									src="images/noodles.jpg"
-									alt="Noodles"
-									className="h-32 w-full object-cover sm:h-48"
-								/>
-							</div>
-							<div>
-								<span className="font-bold">Veg Noodles</span>
-								<span className="block text-sm text-gray-500">Recipe by Mario</span>
-							</div>
-							<div className="badge">
-								<svg
-									className="inline-block w-5"
-									fill="none"
-									strokeLinecap="round"
-									strokeLinejoin="round"
-									strokeWidth="2"
-									stroke="currentColor"
-									viewBox="0 0 24 24"
-								>
-									<path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-								</svg>
-								<span>25 mins</span>
-							</div>
-						</div>
-						<div className="card">
-							<div>
-								<img src="images/curry.jpg" alt="Curry" className="h-32 w-full object-cover sm:h-48" />
-							</div>
-							<div>
-								<span className="font-bold">Tofu Curry</span>
-								<span className="block text-sm text-gray-500">Recipe by Mario</span>
-							</div>
-							<div className="badge">
-								<svg
-									className="inline-block w-5"
-									fill="none"
-									strokeLinecap="round"
-									strokeLinejoin="round"
-									strokeWidth="2"
-									stroke="currentColor"
-									viewBox="0 0 24 24"
-								>
-									<path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-								</svg>
-								<span>25 mins</span>
-							</div>
-						</div>
+						<Card food={food.stew} />
+						<Card food={food.noodles} />
+						<Card food={food.curry} />
 					</div>
 					<h4 className="mt-12 border-b border-gray-200 pb-2 font-bold">Most Popular</h4>
 					<div className="mt-8 grid gap-10 lg:grid-cols-3">
-						<div className="card">
-							<div>
-								<img src="images/curry.jpg" alt="Curry" className="h-32 w-full object-cover sm:h-48" />
-							</div>
-							<div>
-								<span className="font-bold">Tofu Curry</span>
-								<span className="block text-sm text-gray-500">Recipe by Mario</span>
-							</div>
-							<div className="badge">
-								<svg
-									className="inline-block w-5"
-									fill="none"
-									strokeLinecap="round"
-									strokeLinejoin="round"
-									strokeWidth="2"
-									stroke="currentColor"
-									viewBox="0 0 24 24"
-								>
-									<path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-								</svg>
-								<span>25 mins</span>
-							</div>
-						</div>
-						<div className="card">
-							<div>
-								<img src="images/stew.jpg" alt="Stew" className="h-32 w-full object-cover sm:h-48" />
-							</div>
-							<div>
-								<span className="font-bold">5 Bean Chilli Stew</span>
-								<span className="block text-sm text-gray-500">Recipe by Mario</span>
-							</div>
-							<div className="badge">
-								<svg
-									className="inline-block w-5"
-									fill="none"
-									strokeLinecap="round"
-									strokeLinejoin="round"
-									strokeWidth="2"
-									stroke="currentColor"
-									viewBox="0 0 24 24"
-								>
-									<path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-								</svg>
-								<span>25 mins</span>
-							</div>
-						</div>
-						<div className="card">
-							<div>
-								<img
-									src="images/noodles.jpg"
-									alt="Noodles"
-									className="h-32 w-full object-cover sm:h-48"
-								/>
-							</div>
-							<div>
-								<span className="font-bold">Veg Noodles</span>
-								<span className="block text-sm text-gray-500">Recipe by Mario</span>
-							</div>
-							<div className="badge">
-								<svg
-									className="inline-block w-5"
-									fill="none"
-									strokeLinecap="round"
-									strokeLinejoin="round"
-									strokeWidth="2"
-									stroke="currentColor"
-									viewBox="0 0 24 24"
-								>
-									<path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-								</svg>
-								<span>25 mins</span>
-							</div>
-						</div>
+						<Card food={food.stew} />
+						<Card food={food.noodles} />
+						<Card food={food.curry} />
 					</div>
 					<div className="mt-12 flex justify-center">
 						<div className="btn inline-block transform bg-secondary-100 text-secondary-200 transition duration-300 ease-out hover:scale-125 hover:bg-opacity-50 hover:shadow-inner">
