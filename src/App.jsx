@@ -38,7 +38,7 @@ function App() {
 							</svg>
 						</div>
 					</div>
-					<ul className={`mt-6 ${isMenuHidden ? 'hidden' : ''} text-sm md:block`} id="menu">
+					<ul className={`mb-1 mt-6 ${isMenuHidden ? 'hidden' : ''} text-sm md:block`} id="menu">
 						<li className="py-1 font-bold text-gray-700">
 							<a href="#" className="flex justify-end gap-2 border-r-4 border-primary px-4">
 								<span>Home</span>
@@ -55,7 +55,7 @@ function App() {
 								</svg>
 							</a>
 						</li>
-						<li className="py1">
+						<li className="py-1">
 							<a href="#" className="flex justify-end gap-2 border-r-4 border-transparent px-4">
 								<span>About</span>
 								<svg
@@ -71,7 +71,7 @@ function App() {
 								</svg>
 							</a>
 						</li>
-						<li className="py1">
+						<li className="py-1">
 							<a href="#" className="flex justify-end gap-2 border-r-4 border-transparent px-4">
 								<span>Contact</span>
 								<svg
